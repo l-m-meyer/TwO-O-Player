@@ -11,7 +11,7 @@ class Game
   end
 
   def show_score
-    puts "P1: #{@player1.lives}/3 vs P@: #{@player2.lives}/3"
+    puts "P1: #{@player1.lives}/3 vs P2: #{@player2.lives}/3"
   end
 
   def check_score

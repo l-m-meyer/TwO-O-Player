@@ -10,7 +10,7 @@ class Question
     puts "#{name}: What does #{@num1} plus #{@num2} equal?"
   end
 
-  def check_answer(player_answer)
+  def check_answer?(player_answer)
     @sum == player_answer
   end
   
