@@ -17,14 +17,15 @@
     - new_question - method to ask current player a question, receive their answer using $stdin.gets.chomp, and performs check
 
   ### Question
-    - initializer @left_num, @right_num between 1 - 20
-    - ask_question - method to randomly pick a question "#{@left_num} + #{@right_num} = ?"
+    - initializer @num1, @num2 set to random num between 1 - 20
+    - initialize @sum = @num1 + @num2
+    - ask_question - method that asks "#{@num1} + #{@num2} = ?"
     - check_answer - method to check if user answer is correct, attr_accesssor to access answer
 
   ### Game
-    - initialize @player1 & @player2, and @current_player; could be an array to get rid of current_player
+    - initialize @player1 & @player2
     - start - method to start the game
     - show_score - method to display player scores at end of each turn
     - check_score - method to check if a player is out of lives to declare winner
     - declare_winner - method to display winner and stop game
-    - turn_order - method to toggle player turn and set @current_player, and call turn again
+    - turn_order - method to cycle player turn, check score, and call turn again
