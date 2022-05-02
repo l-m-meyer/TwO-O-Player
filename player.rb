@@ -1,7 +1,8 @@
 class Player
-  attr_accessor :lives
+  attr_accessor :name, :lives
 
-  def initialize
+  def initialize(name)
+    @name = name
     @lives = 3
   end
 
@@ -14,10 +15,16 @@ class Player
   end
 
   def new_question
-    new_question = Question.new
-
+    question = Question.new
+    question.ask_question(name)
+    print "> "
     @player_answer = $stdin.gets.chomp
+
+    if question.check_answer(@player_answer.to_i)
+      puts "YES! You are correct."
+    else
+      puts "Seriously? No."
+      lose_life
+    end
   end
-
-
 end
